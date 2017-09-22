@@ -24,12 +24,12 @@ export default {
     },
     plugins: [
         // Create HTML file that includes reference to bundled JS.
-        /*
-        new HtmlWebpackPlugin({
-            template: 'src/index.html',
-            inject: true
-        })
-        */
+
+        // new HtmlWebpackPlugin({
+        //     template: 'src/index.html',
+        //     inject: true
+        // }),
+
 
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()

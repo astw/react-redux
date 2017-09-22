@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import Header from './common/Header'
 
 class App extends React.Component {
 
@@ -10,15 +11,17 @@ class App extends React.Component {
 
   render() {
     return (
+      <div>
       <div className="container-fluid">
-        <p> Header here. </p>
+        <Header />
         {this.props.children}
+      </div>
       </div>
     );
   }
 }
 
-App.prototype = {
+App.propTypes = {
   children: PropTypes.object.isRequired
 };
 
