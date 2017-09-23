@@ -24,7 +24,7 @@ class CoursesPage extends React.Component {
   }
 
   onClickSave(){
-    this.props.dispatch(courseActions.createCourse(this.state.course));
+    this.props.createCourse(this.state.course);
   }
 
   courseRow(course, index){
@@ -33,7 +33,7 @@ class CoursesPage extends React.Component {
 
   render(){
     // step 4
-    debugger;
+    //debugger;
 
     return(
       <div>
@@ -55,17 +55,22 @@ class CoursesPage extends React.Component {
 }
 
 CoursesPage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  courses: PropTypes.array.isRequired
+  courses: PropTypes.array.isRequired,
+  createCourse: PropTypes.func.isRequired
 };
 
 //ownProps: refer to component's own props
 function mapStateToProps(state, ownProps) {
   //step 3
-  debugger;
+  //debugger;
   return {
     courses:state.courses   //data in state.   courses is defined in reducers
   };
 }
 
-export default connect(mapStateToProps)(CoursesPage);
+function  maptDispatchToProps(dispatch) {
+  return {
+    createCourse: course => dispatch(courseActions.createCourse(course))
+  };
+}
+export default connect(mapStateToProps, maptDispatchToProps)(CoursesPage);
