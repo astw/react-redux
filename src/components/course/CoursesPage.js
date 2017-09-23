@@ -32,6 +32,9 @@ class CoursesPage extends React.Component {
   }
 
   render(){
+    // step 4
+    debugger;
+
     return(
       <div>
         <h1>Courses</h1>
@@ -58,6 +61,8 @@ CoursesPage.propTypes = {
 
 //ownProps: refer to component's own props
 function mapStateToProps(state, ownProps) {
+  //step 3
+  debugger;
   return {
     courses:state.courses   //data in state.   courses is defined in reducers
   };
