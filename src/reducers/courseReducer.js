@@ -1,13 +1,13 @@
 import * as types from '../actions/actionTypes';
+import initialState from './initialState';
 
-export default function courseReducer(state =[], action) {   // default is empty array
+export default function courseReducer(state =initialState.courses, action) {   // default is empty array
 
   switch (action.type){
-    case types.CREATE_COURSE:
+    case types.LOAD_COURSES_SUCCESS:
       // step 2
-    //  debugger;
-
-      return [...state, Object.assign({}, action.course)];    // ...spread operator, spread the array and define inline out.
+      // debugger;
+       return action.courses;
 
     default:
       return state;
